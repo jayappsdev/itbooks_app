@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     return json.decode(url.body)['books'];
   }
 
-  TextEditingController _textEditingController = TextEditingController();
+  TextEditingController textEditingController = TextEditingController();
 
   var searchQuery = "";
 
@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
         title: Container(
           height: 38,
           child: TextField(
-            controller: _textEditingController,
+            controller: textEditingController,
             decoration: InputDecoration(
                 filled: true,
                 fillColor: Colors.white,
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
                 hintStyle: TextStyle(fontSize: 14, color: Colors.grey.shade600),
                 hintText: "Search for a book"),
             onSubmitted: (value) {
-              searchQuery = _textEditingController.text;
+              searchQuery = textEditingController.text;
               setState(() {});
             },
           ),
